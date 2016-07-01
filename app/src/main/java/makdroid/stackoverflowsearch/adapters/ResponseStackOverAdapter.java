@@ -41,6 +41,7 @@ public class ResponseStackOverAdapter extends RecyclerView.Adapter<ResponseStack
         holder.userName.setText(item.owner.displayName);
         Picasso.with(holder.userName.getContext()).load(item.owner.profileImage).resize(50, 50).into(holder.userAvatar);
         holder.questionTitle.setText(item.title);
+        holder.answerCount.setText(String.valueOf(item.answerCount));
     }
 
     @Override
@@ -55,6 +56,8 @@ public class ResponseStackOverAdapter extends RecyclerView.Adapter<ResponseStack
         ImageView userAvatar;
         @Bind(R.id.question_title)
         TextView questionTitle;
+        @Bind(R.id.answer_count)
+        TextView answerCount;
 
         public ItemHolder(View itemView) {
             super(itemView);
