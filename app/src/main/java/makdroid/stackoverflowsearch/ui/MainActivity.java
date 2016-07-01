@@ -1,9 +1,5 @@
 package makdroid.stackoverflowsearch.ui;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.view.MenuItemCompat;
@@ -25,7 +21,6 @@ import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import makdroid.stackoverflowsearch.QuestionsAlarmReceiver;
 import makdroid.stackoverflowsearch.R;
 import makdroid.stackoverflowsearch.StackOverApplication;
 import makdroid.stackoverflowsearch.adapters.RecyclerItemClickListener;
@@ -83,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
         return true;
     }
 
@@ -99,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
         StackOverApplication application = (StackOverApplication) getApplication();
         application.getNetComponent().inject(this);
     }
-
 
     private void initRecyclerView() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
@@ -160,7 +155,5 @@ public class MainActivity extends AppCompatActivity {
     void onCardItemClick(String url, String title) {
         DetailsActivity.start(this, url, title);
     }
-
-
 
 }
