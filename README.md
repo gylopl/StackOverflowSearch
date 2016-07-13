@@ -13,3 +13,8 @@ butterknife
 picasso
 
 dagger2
+
+
+todo
+
+add support orientation change (I forgot about that ;))
